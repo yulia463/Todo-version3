@@ -19,7 +19,7 @@ function App() {
         if (text.trim() === '') {
             return
         }
-        const newTodo = {
+        const newTodo: TodoType = {
             text,
             isCompleted: false,
             id: v1(),
@@ -38,12 +38,30 @@ function App() {
             )
         )
     }
+    const resetTodosHandler = () => {
+        setTodos([])
+    }
+    const deleteCompletedTodosHandler = () => {
+        setTodos(todos.filter((todo) => !todo.isCompleted))
+    }
+    const completedTodosCount=todos.filter((todo)=>todo.isCompleted).length
     return (
         <div className="App">
             <h1>Todo App</h1>
-            <TodoForm addTodo={addTodoHandler}/>
-            <TodosActions/>
-            <TodoList todos={todos} deleteTodo={deleteTodoHandler} toggleTodo={toggleTodoHandler}/>
+            <TodoForm
+                addTodo={addTodoHandler}/>
+
+            {todos.length
+                ? <TodosActions
+                    completedTodosExist={!!completedTodosCount}
+                    resetTodos={resetTodosHandler}
+                    deleteCompletedTodosHandler={deleteCompletedTodosHandler}/>
+                : null
+            }
+            <TodoList
+                todos={todos}
+                deleteTodo={deleteTodoHandler}
+                toggleTodo={toggleTodoHandler}/>
 
         </div>
     );

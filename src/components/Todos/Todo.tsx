@@ -16,7 +16,7 @@ export const Todo = (props: TodoPropsType) => {
             props.todo.isCompleted ? styles.completedTodo : ''}`}>
 
             <RiTodoFill className={styles.todoIcon}/>
-            <div className={styles.todoText}>{props.todo.text}</div>
+            <div className={styles.todoText}>{props.todo.text} </div>
             <RiDeleteBin2Line
                 className={styles.deleteIcon}
                 onClick={() => props.deleteTodo()}/>
