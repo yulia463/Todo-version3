@@ -2,10 +2,11 @@ import React from "react";
 import styles from './Button.module.css'
 
 type ButtonPropsType = {
-    onClick?: () => void
-    children?:React.ReactNode
-    title?:string
-    disabled?:boolean
+    onClick: any
+    children:React.ReactNode
+    title:string
+    disabled:boolean
+    type:'submit' | 'button' |'reset'
 }
 
  const Button = (props: ButtonPropsType) => {

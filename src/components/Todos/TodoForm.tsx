@@ -23,7 +23,7 @@ export const TodoForm = (props: TodoFormPropsType) => {
                     placeholder={"Enter new todo"}
                     value={text}
                     onChange={(e) => setText(e.target.value)}/>
-                <Button onClick={onSubmitHandler} type={"submit"} title={'Submit'}>Submit</Button>
+                <Button disabled={false} onClick={onSubmitHandler} type={"submit"} title={'Submit'}>Submit</Button>
             </form>
         </div>
 

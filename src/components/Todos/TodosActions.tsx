@@ -14,11 +14,14 @@ const TodosActions = (props: TodoActionsType) => {
     return (
         <div className={styles.todosActionsContainer}>
             <Button
+                type={"submit"}
+                disabled={false}
                 title={"Reset Todos"}
                 onClick={props.resetTodos}>
                 <RiRefreshLine/>
             </Button>
             <Button
+                type={"submit"}
                 title={"Clear Completed Todos"}
                 onClick={props.deleteCompletedTodosHandler}
                 disabled={!props.completedTodosExist}
