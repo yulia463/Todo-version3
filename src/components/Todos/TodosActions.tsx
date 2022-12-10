@@ -14,6 +14,7 @@ const TodosActions = (props: TodoActionsType) => {
     return (
         <div className={styles.todosActionsContainer}>
             <Button
+                subtitle={'ll'}
                 type={"submit"}
                 disabled={false}
                 title={"Reset Todos"}
@@ -21,6 +22,7 @@ const TodosActions = (props: TodoActionsType) => {
                 <RiRefreshLine/>
             </Button>
             <Button
+                subtitle={'jj'}
                 type={"submit"}
                 title={"Clear Completed Todos"}
                 onClick={props.deleteCompletedTodosHandler}

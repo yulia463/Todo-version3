@@ -7,6 +7,7 @@ type ButtonPropsType = {
     title:string
     disabled:boolean
     type:'submit' | 'button' |'reset'
+    subtitle:string
 }
 
  const Button = (props: ButtonPropsType) => {
